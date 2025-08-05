@@ -32,14 +32,16 @@
     }
     .servicio-box {
       background-color: white;
-      border-radius: 12px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-      padding: 25px;
-      margin-bottom: 20px;
-      transition: transform 0.3s ease;
+      border: 1px solid #dce4ec;
+      border-radius: 16px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+      padding: 30px 20px;
+      margin-bottom: 30px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
     .servicio-box:hover {
-      transform: scale(1.05);
+      transform: translateY(-5px);
+      box-shadow: 0 12px 28px rgba(0, 0, 0, 0.15);
     }
     .servicio-icono {
       font-size: 3rem;
@@ -76,25 +78,32 @@
   <section class="container mt-5" id="servicios">
     <h2 class="text-center text-primary">Nuestros Servicios</h2>
     <div class="row text-center">
-      <div class="col-md-4">
+      <div class="col-md-6 col-lg-3">
         <div class="servicio-box">
           <i class="bi bi-pc-display servicio-icono"></i>
-          <h4>Mantenimiento de PCs</h4>
-          <p>Prevención, corrección y optimización de equipos.</p>
+          <h5>Mantenimiento de PCs</h5>
+          <p>Diagnóstico, limpieza profunda, optimización de rendimiento y solución de fallos físicos o lógicos.</p>
         </div>
       </div>
-      <div class="col-md-4">
+      <div class="col-md-6 col-lg-3">
         <div class="servicio-box">
           <i class="bi bi-windows servicio-icono"></i>
-          <h4>Instalación de Licencias</h4>
-          <p>Windows y Office activados correctamente.</p>
+          <h5>Instalación de Licencias</h5>
+          <p>Instalamos y activamos licencias de Windows y Office para un entorno de trabajo estable y seguro.</p>
         </div>
       </div>
-      <div class="col-md-4">
+      <div class="col-md-6 col-lg-3">
         <div class="servicio-box">
           <i class="bi bi-globe servicio-icono"></i>
-          <h4>Creación de Páginas Web</h4>
-          <p>Diseño moderno y adaptado a tu negocio.</p>
+          <h5>Creación de Páginas Web</h5>
+          <p>Diseños modernos, responsivos y funcionales enfocados en posicionar tu marca y atraer más clientes.</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-3">
+        <div class="servicio-box">
+          <i class="bi bi-hdd-network servicio-icono"></i>
+          <h5>Cableado Estructurado y Redes</h5>
+          <p>Instalación y ponchado de cables, configuración de puntos de acceso y redes gestionadas desde tu router ISP.</p>
         </div>
       </div>
     </div>
