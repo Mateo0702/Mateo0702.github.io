@@ -15,24 +15,38 @@
 
     .hero {
       background: linear-gradient(135deg, #c2e9fb, #f9fafe);
-      color: rgb(6, 0, 0);
-      padding: 60px 20px;
+      color: #000;
+      padding: 80px 20px;
       text-align: center;
+      position: relative;
+      border-bottom-left-radius: 30px;
+      border-bottom-right-radius: 30px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
     }
 
     .hero img {
-      width: 150px;
-      height: 150px;
-      object-fit: cover;
+      width: 160px;
+      height: 160px;
       border-radius: 50%;
       border: 5px solid white;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+      box-shadow: 0 6px 15px rgba(0,0,0,0.3);
+      transition: transform 0.3s ease;
     }
-    
-    .hero .btn-volver {
+
+    .hero img:hover {
+      transform: scale(1.05);
+    }
+
+    .btn-volver {
       position: absolute;
       top: 20px;
       right: 20px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .btn-volver:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 6px 15px rgba(0,0,0,0.2);
     }
 
     .section-box {
@@ -105,6 +119,7 @@
         <li><strong>Conceptos básicos de redes</strong> – Cisco Networking Academy (18/09/2024)</li>
         <li><strong>Introducción a la Ciberseguridad</strong> – Cisco Networking Academy (15/08/2024)</li>
         <li><strong>The Complete C Programming Course for Basic to Expert</strong> – Udemy (20/08/2024)</li>
+        <li><strong>Dispositivos de Red y Configuración Inicial</strong> – Cisco Networking Academy (10/03/2025)</li>
       </ul>
     </div>
 
@@ -131,11 +146,6 @@
         <li>Ventas y preparación de productos de cafetería</li>
       </ul>
 
-      <h5>Auxiliar de Bodega – DASAM DISTRIBUIDORA <small>(08/2017 - 03/2020)</small></h5>
-      <ul>
-        <li>Mantenimiento de bodega</li>
-        <li>Despachos y recepción de mercadería</li>
-      </ul>
     </div>
   </div>
 
