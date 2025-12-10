@@ -11,12 +11,20 @@
       background-color: #f0f4f8;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       color: #333;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    /* Navbar igual al Home */
+    .navbar {
+        box-shadow: 0 4px 12px rgba(0,0,0,0.1);
     }
 
     .hero {
       background: linear-gradient(135deg, #c2e9fb, #f9fafe);
       color: #000;
-      padding: 80px 20px;
+      padding: 60px 20px;
       text-align: center;
       position: relative;
       border-bottom-left-radius: 30px;
@@ -31,22 +39,11 @@
       border: 5px solid white;
       box-shadow: 0 6px 15px rgba(0,0,0,0.3);
       transition: transform 0.3s ease;
+      object-fit: cover; /* Asegura que la foto no se deforme */
     }
 
     .hero img:hover {
       transform: scale(1.05);
-    }
-
-    .btn-volver {
-      position: absolute;
-      top: 20px;
-      right: 20px;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-
-    .btn-volver:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 6px 15px rgba(0,0,0,0.2);
     }
 
     .section-box {
@@ -55,6 +52,7 @@
       border-radius: 15px;
       box-shadow: 0 4px 8px rgba(0,0,0,0.1);
       margin-bottom: 30px;
+      border-left: 5px solid #005b96; /* Detalle visual elegante */
     }
 
     h2 {
@@ -69,85 +67,135 @@
     }
 
     .social-icons a {
-      color: rgb(1, 1, 1);
-      font-size: 1.5rem;
+      color: #005b96;
+      font-size: 1.8rem;
       margin: 0 10px;
       transition: 0.3s;
     }
 
     .social-icons a:hover {
-      color: #00ffcc;
+      color: #00bfff;
+      transform: scale(1.1);
+    }
+
+    /* Footer */
+    footer {
+      background-color: #001d3d;
+      color: white;
+      padding: 20px 0;
+      margin-top: auto; /* Empuja el footer al final */
     }
   </style>
 </head>
 <body>
+
+  <nav class="navbar navbar-expand-lg navbar-dark sticky-top" style="background-color: #001d3d;">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="../index.html">MSZ Servicios IT</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="../index.html">
+                <i class="bi bi-arrow-left"></i> Volver al Inicio
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
   <header class="hero">
-    <a href="../index.html" class="btn btn-outline-primary btn-volver">
-      ← Volver al Menú Principal
-    </a>
-    <img src="/img/foto.jpg" alt="Mateo Samaniego">
-    <h1 class="mt-3 mb-0">Mateo Samaniego</h1>
-    <p class="lead">Tecnólogo Superior en Administración de Infraestructura y Plataformas Tecnológicas</p>
-    <p>Cuenca, Ecuador</p>
+    <img src="../img/foto.jpg" alt="Mateo Samaniego" onerror="this.src='https://via.placeholder.com/150'">
+    <h1 class="mt-3 mb-0 fw-bold">Mateo Samaniego</h1>
+    <p class="lead text-muted">Tecnólogo Superior en Administración e Infraestructura de Plataformas tecnológicas</p>
+    <p><i class="bi bi-geo-alt-fill text-danger"></i> Cuenca, Ecuador</p>
+    
     <div class="social-icons mt-3">
-      <a href="https://wa.me/593958893060" target="_blank">
+      <a href="https://wa.me/593958893060" target="_blank" title="WhatsApp">
         <i class="bi bi-whatsapp"></i>
       </a>
-      <a href="https://www.instagram.com/invites/contact/?igsh=19lxrgxkm3pce&utm_content=z0uu639" target="_blank">
+      <a href="https://www.instagram.com/invites/contact/?igsh=19lxrgxkm3pce&utm_content=z0uu639" target="_blank" title="Instagram">
         <i class="bi bi-instagram"></i>
+      </a>
+      <a href="mailto:mszserviciosit@gmail.com" title="Enviar Correo">
+        <i class="bi bi-envelope-at-fill"></i>
       </a>
     </div>
   </header>
 
-  <!-- Cuerpo -->
   <div class="container mt-5 mb-5">
 
-    <div class="section-box">
-      <h2>Aptitudes</h2>
-      <ul>
-        <li>Responsabilidad y dedicación</li>
-        <li>Trabajo en equipo y cooperación</li>
-        <li>Aprendizaje continuo</li>
-        <li>Adaptabilidad y resolución de problemas</li>
-        <li>Multitarea y actitud dinámica</li>
-      </ul>
-    </div>
+    <div class="row">
+        <div class="col-lg-4">
+            <div class="section-box h-100">
+                <h2>Aptitudes</h2>
+                <ul class="list-unstyled">
+                    <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i>Responsabilidad</li>
+                    <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i>Trabajo en equipo</li>
+                    <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i>Aprendizaje continuo</li>
+                    <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i>Resolución de problemas</li>
+                    <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i>Actitud dinámica</li>
+                </ul>
+            </div>
+        </div>
 
-    <div class="section-box">
-      <h2>Diplomas</h2>
-      <ul>
-        <li><strong>Conceptos básicos de redes</strong> – Cisco Networking Academy (18/09/2024)</li>
-        <li><strong>Introducción a la Ciberseguridad</strong> – Cisco Networking Academy (15/08/2024)</li>
-        <li><strong>The Complete C Programming Course for Basic to Expert</strong> – Udemy (20/08/2024)</li>
-        <li><strong>Dispositivos de Red y Configuración Inicial</strong> – Cisco Networking Academy (10/03/2025)</li>
-      </ul>
-    </div>
+        <div class="col-lg-8">
+            <div class="section-box">
+              <h2>Historial Laboral</h2>
+              
+              <div class="mb-4">
+                  <h5 class="fw-bold">Pasante – CELEC EP</h5>
+                  <p class="text-muted small mb-1"><i class="bi bi-calendar3"></i> Marzo 2023 - Septiembre 2023</p>
+                  <ul>
+                    <li>Mantenimiento general de computadoras.</li>
+                    <li>Instalación de software y actualizaciones.</li>
+                    <li>Desarrollo de software interno para gestión de equipos.</li>
+                  </ul>
+              </div>
 
-    <div class="section-box">
-      <h2>Formación Académica</h2>
-      <ul>
-        <li><strong>2023 - 2025:</strong> Tecnólogo Superior en Administración de Infraestructura y Plataformas Tecnológicas – Universidad de Cuenca</li>
-        <li><strong>2012 - 2019:</strong> Bachiller en Ciencias – Unidad Educativa Particular Corel</li>
-        <li><strong>2007 - 2012:</strong> Primaria – Unidad Educativa Letras y Vida</li>
-      </ul>
-    </div>
+              <div>
+                  <h5 class="fw-bold">Atención al Cliente – D Mousse</h5>
+                  <p class="text-muted small mb-1"><i class="bi bi-calendar3"></i> Marzo 2025 - Junio 2025</p>
+                  <ul>
+                    <li>Ventas y preparación de productos de cafetería.</li>
+                  </ul>
+              </div>
+            </div>
 
-    <div class="section-box">
-      <h2>Historial Laboral</h2>
-      <h5>Pasante – CELEC EP <small>(03/2023 - 09/2023)</small></h5>
-      <ul>
-        <li>Mantenimiento general de computadoras</li>
-        <li>Instalación de software y actualizaciones</li>
-        <li>Desarrollo de software interno para gestión de equipos</li>
-      </ul>
+            <div class="section-box">
+              <h2>Formación Académica</h2>
+              <ul class="list-unstyled">
+                <li class="mb-3">
+                    <strong>Tecnólogo Superior en Administración e Infraestructura de Plataformas tecnológicas</strong><br>
+                    <span class="text-muted">Universidad de Cuenca (2023 - 2025)</span>
+                </li>
+                <li class="mb-3">
+                    <strong>Bachiller en Ciencias</strong><br>
+                    <span class="text-muted">Unidad Educativa Particular Corel (2012 - 2019)</span>
+                </li>
+              </ul>
+            </div>
 
-      <h5>Atención al Cliente – D Mousse <small>(03/2025 - 06/2025)</small></h5>
-      <ul>
-        <li>Ventas y preparación de productos de cafetería</li>
-      </ul>
-
+            <div class="section-box">
+                <h2>Diplomas y Certificaciones</h2>
+                <ul>
+                  <li><strong>Conceptos básicos de redes</strong> – Cisco Networking Academy (18/09/2024)</li>
+                  <li><strong>Introducción a la Ciberseguridad</strong> – Cisco Networking Academy (15/08/2024)</li>
+                  <li><strong>Curso Completo de C (Básico a Experto)</strong> – Udemy (20/08/2024)</li>
+                  <li><strong>Dispositivos de Red</strong> – Cisco Networking Academy (10/03/2025)</li>
+                </ul>
+              </div>
+        </div>
     </div>
   </div>
 
+  <footer class="text-center small opacity-75">
+    <p class="mb-0">&copy; 2025 MSZ Servicios IT - Perfil Profesional</p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

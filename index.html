@@ -12,6 +12,11 @@
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     }
 
+    /* Navbar Personalizado */
+    .navbar {
+        box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
     /* Hero */
     .hero {
       background: linear-gradient(135deg, #c2e9fb, #f9fafe);
@@ -51,6 +56,7 @@
       padding: 30px 20px;
       margin-bottom: 30px;
       transition: transform 0.3s ease, box-shadow 0.3s ease;
+      height: 100%; /* Para que todas las cajas tengan la misma altura */
     }
     .servicio-box:hover {
       transform: translateY(-5px);
@@ -71,12 +77,13 @@
       padding: 30px;
       border-radius: 16px;
       box-shadow: 0 8px 24px rgba(0,0,0,0.1);
-      margin-bottom: 30px;
+      height: 100%; /* Asegura altura igual en ambas columnas */
     }
     .mision-box i, .vision-box i {
       font-size: 2.5rem;
       color: #005b96;
       margin-bottom: 15px;
+      display: block;
     }
 
     /* Contacto */
@@ -100,32 +107,51 @@
     }
     footer a {
       color: #00bfff;
+      font-size: 1.5rem;
       margin: 0 10px;
       transition: transform 0.3s ease;
+      display: inline-block;
     }
     footer a:hover {
       transform: scale(1.2);
+      color: white;
     }
-
   </style>
 </head>
-<body>
+<body id="inicio">
 
-  <!-- Hero -->
+  <nav class="navbar navbar-expand-lg navbar-dark sticky-top" style="background-color: #001d3d;">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="#inicio">MSZ Servicios IT</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item"><a class="nav-link" href="#inicio">Inicio</a></li>
+          <li class="nav-item"><a class="nav-link" href="#servicios">Servicios</a></li>
+          <li class="nav-item"><a class="nav-link" href="#nosotros">Nosotros</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contacto">Contacto</a></li>
+          <li class="nav-item ms-lg-2 mt-2 mt-lg-0">
+            <a class="btn btn-outline-info btn-sm text-white" href="templates/perfil.html">Mi Perfil</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
   <header class="hero">
     <img src="/img/logo_msz2.png" alt="Logo MSZ">
-    <h1>MSZ Servicios IT</h1>
+    <h1 class="fw-bold">MSZ Servicios IT</h1>
     <p>Tecnología confiable, soluciones reales</p>
-    <a href="templates/perfil.html" class="btn btn-outline-primary">
-      Mi Perfil Profesional
+    <a href="#contacto" class="btn btn-primary btn-lg rounded-pill px-4 shadow-sm">
+      Cotizar Ahora
     </a>
   </header>
 
-  <!-- Servicios -->
   <section class="container mt-5" id="servicios">
-    <h2 class="text-center text-primary mb-4">Nuestros Servicios</h2>
+    <h2 class="text-center text-primary mb-5 fw-bold">Nuestros Servicios</h2>
     <div class="row text-center g-4">
-      <!-- Mantenimiento de PCs -->
       <div class="col-md-6 col-lg-4">
         <div class="servicio-box" style="background: linear-gradient(145deg, #e0f7fa, #b2ebf2);">
           <i class="bi bi-pc-display servicio-icono"></i>
@@ -133,7 +159,6 @@
           <p>Diagnóstico, limpieza profunda, optimización y solución de fallos físicos o lógicos.</p>
         </div>
       </div>
-      <!-- Instalación de Licencias -->
       <div class="col-md-6 col-lg-4">
         <div class="servicio-box" style="background: linear-gradient(145deg, #fff3e0, #ffe0b2);">
           <i class="bi bi-windows servicio-icono"></i>
@@ -141,7 +166,6 @@
           <p>Activación de Windows y Office para un entorno estable y seguro.</p>
         </div>
       </div>
-      <!-- Cableado y Redes -->
       <div class="col-md-6 col-lg-4">
         <div class="servicio-box" style="background: linear-gradient(145deg, #f3e5f5, #e1bee7);">
           <i class="bi bi-hdd-network servicio-icono"></i>
@@ -149,7 +173,6 @@
           <p>Instalación de cables, puntos de acceso y redes gestionadas desde tu router ISP.</p>
         </div>
       </div>
-      <!-- Asesoría Electrónica e IoT -->
       <div class="col-md-6 col-lg-4">
         <div class="servicio-box" style="background: linear-gradient(145deg, #e8f5e9, #c8e6c9);">
           <i class="bi bi-lightning-charge servicio-icono"></i>
@@ -157,7 +180,6 @@
           <p>Proyectos y talleres de robótica y electrónica para chicos de colegios, desde básico hasta avanzado.</p>
         </div>
       </div>
-      <!-- Armado de Setup Gamers -->
       <div class="col-md-6 col-lg-4">
         <div class="servicio-box" style="background: linear-gradient(145deg, #fffde7, #fff9c4);">
           <i class="bi bi-controller servicio-icono"></i>
@@ -165,7 +187,6 @@
           <p>Diseño y ensamblaje de PC de escritorio optimizadas para gaming y streaming.</p>
         </div>
       </div>
-      <!-- Sistemas Web y en la Nube -->
       <div class="col-md-6 col-lg-4">
         <div class="servicio-box" style="background: linear-gradient(145deg, #e3f2fd, #bbdefb);">
           <i class="bi bi-code-square servicio-icono"></i>
@@ -176,46 +197,54 @@
     </div>
   </section>
 
-  <!-- Misión -->
-  <section class="container mt-5" id="mision">
-    <h2 class="text-center text-primary mb-4">Misión</h2>
-    <div class="mision-box text-center">
-      <i class="bi bi-gear-fill"></i>
-      <p>Brindar soluciones tecnológicas confiables y accesibles que mejoren la productividad de nuestros clientes a través del soporte, mantenimiento e innovación digital.</p>
+  <section class="container mt-5 pt-4" id="nosotros">
+    <div class="row g-4 align-items-stretch">
+        <div class="col-md-6">
+            <div class="mision-box text-center">
+                <h3 class="text-primary mb-3">Misión</h3>
+                <i class="bi bi-gear-fill"></i>
+                <p>Brindar soluciones tecnológicas confiables y accesibles que mejoren la productividad de nuestros clientes a través del soporte, mantenimiento e innovación digital.</p>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="vision-box text-center">
+                <h3 class="text-primary mb-3">Visión</h3>
+                <i class="bi bi-rocket-takeoff-fill"></i>
+                <p>Ser una empresa líder en servicios tecnológicos en Ecuador, reconocida por la calidad, cercanía y compromiso con nuestros clientes.</p>
+            </div>
+        </div>
     </div>
   </section>
 
-  <!-- Visión -->
-  <section class="container mt-4" id="vision">
-    <h2 class="text-center text-primary mb-4">Visión</h2>
-    <div class="vision-box text-center">
-      <i class="bi bi-rocket-takeoff-fill"></i>
-      <p>Ser una empresa líder en servicios tecnológicos en Ecuador, reconocida por la calidad, cercanía y compromiso con nuestros clientes.</p>
-    </div>
-  </section>
-
-  <!-- Contacto -->
   <section class="container mt-5 mb-5" id="contacto">
-    <h2 class="text-center text-primary mb-4">Contacto</h2>
+    <h2 class="text-center text-primary mb-4 fw-bold">Contacto</h2>
     <div class="row justify-content-center">
-      <div class="col-md-6 contact-box">
+      <div class="col-md-8 col-lg-6 contact-box">
+        <div class="text-center mb-3">
+             <h3>¡Hablemos!</h3>
+             <p class="text-muted">Estamos listos para ayudarte con tu tecnología</p>
+        </div>
         <p><i class="bi bi-telephone-fill"></i><strong>Teléfono:</strong> 099 998 6186</p>
         <p><i class="bi bi-envelope-fill"></i><strong>Correo:</strong> mszserviciosit@gmail.com</p>
         <p><i class="bi bi-clock-fill"></i><strong>Horario de atención:</strong><br>
-           Lunes a Viernes: 8:00 AM - 6:00 PM<br>Sábados: 8:00 AM - 1:00 PM</p>
-        <a href="https://wa.me/593999986186" target="_blank" class="btn btn-success btn-whatsapp mt-3">
-          <i class="bi bi-whatsapp"></i> WhatsApp
-        </a>
+           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Lunes a Viernes: 8:00 AM - 6:00 PM<br>
+           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Sábados: 8:00 AM - 1:00 PM</p>
+        
+        <div class="text-center mt-4">
+            <a href="https://wa.me/593999986186" target="_blank" class="btn btn-success btn-whatsapp">
+            <i class="bi bi-whatsapp"></i> Escribir al WhatsApp
+            </a>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- Footer -->
   <footer class="text-center">
-    <p class="mb-2">&copy; 2025 MSZ Servicios IT. Todos los derechos reservados.</p>
-    <div>
-      <a href="https://www.instagram.com/mszserviciosit?igsh=MWtnZmpjY3hxdjB2Yg=="><i class="bi bi-facebook"></i></a>
-      <a href="https://www.instagram.com/mszserviciosit?igsh=MWtnZmpjY3hxdjB2Yg=="><i class="bi bi-instagram"></i></a>
+    <p class="mb-2 small opacity-75">&copy; 2025 MSZ Servicios IT. Todos los derechos reservados.</p>
+    <div class="mt-3">
+      <a href="#" target="_blank" title="Facebook"><i class="bi bi-facebook"></i></a>
+      
+      <a href="https://www.instagram.com/mszserviciosit?igsh=MWtnZmpjY3hxdjB2Yg==" target="_blank" title="Instagram"><i class="bi bi-instagram"></i></a>
     </div>
   </footer>
 
